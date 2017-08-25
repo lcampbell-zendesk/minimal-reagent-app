@@ -1,5 +1,5 @@
 (defproject minimal-reagent-app "0.1.0-SNAPSHOT"
-  :description "An minimal example Zendesk App using reagent"
+  :description "A minimal example Zendesk App using reagent"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

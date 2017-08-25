@@ -1,6 +1,6 @@
 # minimal-reagent-app
 
-An minimal example Zendesk App using reagent
+A minimal example Zendesk App using reagent
 
 ## Setup
 
