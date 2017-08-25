@@ -8,6 +8,14 @@ The only project dependency is Java. Running any of the scripts in `bin` will
 cause Clojure (the language), Leiningen (the build tool), and any project
 dependencies to be installed if they are not already.
 
+    ./bin/zat-server
+    
+Then visit a ticket like:
+
+> https://z3nlcampbellmcpherson.zendesk.com/agent/tickets/1?zat=true
+
+## Development
+
 To get an interactive development environment run:
 
     ./bin/repl
@@ -20,12 +28,6 @@ get a Browser Connected REPL. An easy way to try it is:
     (js/alert "Am I connected?")
 
 and you should see an alert in the browser window.
-
-## Deployment
-
-To create a production build run:
-
-    ./bin/production-compile
 
 ## License
 
