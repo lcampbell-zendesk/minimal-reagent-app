@@ -30,7 +30,7 @@
                            :preloads [devtools.preload]}}
                {:id "min"
                 :source-paths ["src"]
-                :compiler {:output-to "resources/public/js/compiled/minimal_reagent_app.js"
+                :compiler {:output-to "resources/dist/assets/app.js"
                            :main minimal-reagent-app.core
                            :optimizations :advanced
                            :pretty-print false}}]}

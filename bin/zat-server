@@ -2,4 +2,4 @@
 
 gem install rake
 gem install zendesk_apps_tools
-zat server --path ./resources/public/
+zat server --path ./resources/dist
