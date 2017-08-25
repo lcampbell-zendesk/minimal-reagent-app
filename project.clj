@@ -31,7 +31,7 @@
                 :source-paths ["src"]
                 :compiler     {:output-to     "resources/dist/assets/app.js"
                                :main          minimal-reagent-app.core
-                               :optimizations :advanced
+                               :optimizations :simple
                                :pretty-print  false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]}

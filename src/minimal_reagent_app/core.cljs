@@ -1,5 +1,6 @@
 (ns minimal-reagent-app.core
-    (:require [reagent.core :as reagent]))
+  (:require [reagent.core :as reagent]
+            [clojure.walk :as walk]))
 
 (defonce state
   (reagent/atom
@@ -13,12 +14,26 @@
            :value     text}])
 
 (defn root [state]
-  (let [{:keys [text]} @state]
-    [:p [text-input text]]))
+  (let [{:keys [text zdclient]} @state
+        {:keys [product account ticketId]} zdclient]
+    [:div
+     [:p [text-input text]]
+     [:p "Product: " product]
+     [:p "Account Subdomain: " (:subdomain account)]
+     [:p "Ticket ID: " ticketId]
+     [:pre (str @state)]]))
+
+(defn cljsify [val]
+  (-> val js->clj walk/keywordize-keys))
 
 (defn main []
-  (reagent/render [root state]
-                  (js/document.getElementById "app")))
+  (let [client (js/ZAFClient.init)]
+    (.on client "app.registered"
+         (fn [value]
+           (let [{:keys [context]} (cljsify value)]
+             (swap! state assoc :zdclient context))))
+    (reagent/render [root state]
+                   (js/document.getElementById "app"))))
 
 (defonce app
   (main))
