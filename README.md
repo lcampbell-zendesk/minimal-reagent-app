@@ -4,9 +4,13 @@ A minimal example Zendesk App using reagent
 
 ## Setup
 
+The only project dependency is Java. Running any of the scripts in `bin` will
+cause Clojure (the language), Leiningen (the build tool), and any project
+dependencies to be installed if they are not already.
+
 To get an interactive development environment run:
 
-    lein figwheel
+    ./bin/repl
 
 and open your browser at [localhost:3449](http://localhost:3449/).
 This will auto compile and send all changes to the browser without the
@@ -17,16 +21,11 @@ get a Browser Connected REPL. An easy way to try it is:
 
 and you should see an alert in the browser window.
 
-To clean all compiled files:
-
-    lein clean
+## Deployment
 
 To create a production build run:
 
-    lein do clean, cljsbuild once min
-
-And open your browser in `resources/public/index.html`. You will not
-get live reloading, nor a REPL. 
+    ./bin/production-compile
 
 ## License
 
