@@ -1,12 +1,27 @@
 (ns minimal-reagent-app.core
-    (:require ))
+    (:require [reagent.core :as reagent]))
 
-(enable-console-print!)
+(defonce state
+  (reagent/atom
+   {:text "Hello world!"}))
 
-(println "This text is printed from src/minimal-reagent-app/core.cljs. Go ahead and edit it and see reloading in action.")
+(defn update-text [e]
+  (swap! state assoc :text e.target.value))
 
-(defonce app-state
-  (atom {:text "Hello world!"}))
+(defn text-input [text]
+  [:input {:on-change update-text
+           :value     text}])
+
+(defn root [state]
+  (let [{:keys [text]} @state]
+    [:p [text-input text]]))
+
+(defn main []
+  (reagent/render [root state]
+                  (js/document.getElementById "app")))
+
+(defonce app
+  (main))
 
 (defn on-js-reload []
-  (js/console.log "code reloaded"))
+  (main))
