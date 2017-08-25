@@ -13,3 +13,4 @@ pom.xml
 .nrepl-port
 
 /resources/dist/assets/app.js
+/resources/dist/assets/out/
