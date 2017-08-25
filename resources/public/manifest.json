@@ -1,0 +1,17 @@
+{
+  "name": "Simple Reagent",
+  "author": {
+    "name": "Logan Campbell",
+    "email": "lmcapbellmcpherson@zendesk.com",
+    "url": "https://www.zendesk.com"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "location": {
+    "zendesk": {
+      "ticket_sidebar": "assets/index.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}
