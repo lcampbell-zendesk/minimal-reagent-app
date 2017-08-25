@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+gem install rake
+gem install zendesk_apps_tools
+zat server --path ./resources/public/
